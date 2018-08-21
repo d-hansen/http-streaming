@@ -21,6 +21,9 @@ logs
 *.log
 npm-debug.log*
 
+# NPM generated
+package-lock.json
+
 # Dependency directories
 bower_components/
 node_modules/
