@@ -700,10 +700,12 @@ if (!videojs.use) {
 }
 videojs.options.hls = videojs.options.hls || {};
 
-if (videojs.registerPlugin) {
-  videojs.registerPlugin('reloadSourceOnError', reloadSourceOnError);
-} else {
-  videojs.plugin('reloadSourceOnError', reloadSourceOnError);
+if (!videojs.hasPlugin('reloadSourceOnError')) {
+  if (videojs.registerPlugin) {
+    videojs.registerPlugin('reloadSourceOnError', reloadSourceOnError);
+  } else {
+    videojs.plugin('reloadSourceOnError', reloadSourceOnError);
+  }
 }
 
 export {
