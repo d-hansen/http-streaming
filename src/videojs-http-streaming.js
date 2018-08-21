@@ -700,7 +700,7 @@ if (!videojs.use) {
 }
 videojs.options.hls = videojs.options.hls || {};
 
-if (!videojs.hasPlugin('reloadSourceOnError')) {
+if (videojs.getPlugin('reloadSourceOnError') == undefined) {
   if (videojs.registerPlugin) {
     videojs.registerPlugin('reloadSourceOnError', reloadSourceOnError);
   } else {
